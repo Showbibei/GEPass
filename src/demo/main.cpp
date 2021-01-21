@@ -63,7 +63,7 @@ struct Coin : public Component
         ShaderMaterial coinMaterial;
         coinMaterial.SetMaterial(rend::vec3(1, 1, 0), 0.0f, 0.3f, 0.0f);
         std::shared_ptr<Renderer> r = getEntity()->addComponent<Renderer>(coinMaterial);
-        std::shared_ptr<Model> m = getCore()->getAssetManager()->load<Model>("E:/Github/FinalGEP/assets/coin");
+        std::shared_ptr<Model> m = getCore()->getAssetManager()->load<Model>("../assets/coin");
         r->setModel(m);
     }
 };
@@ -75,7 +75,7 @@ struct Floor : public Component
         ShaderMaterial cubeMaterial;
         cubeMaterial.SetMaterial(rend::vec3(0.5, 0.5, 0.5), 0.1f, 0.1f, 0.1f);
         std::shared_ptr<Renderer> r = getEntity()->addComponent<Renderer>(cubeMaterial);
-        std::shared_ptr<Model> m = getCore()->getAssetManager()->load<Model>("E:/Github/FinalGEP/assets/cube");
+        std::shared_ptr<Model> m = getCore()->getAssetManager()->load<Model>("../assets/cube");
         r->setModel(m);
     }
 };
@@ -85,7 +85,7 @@ struct Curuthers : public Component
     void onInitialize()
     {
         std::shared_ptr<Renderer> r = getEntity()->addComponent<Renderer>();
-        std::shared_ptr<Model> m = getCore()->getAssetManager()->load<Model>("E:/Github/FinalGEP/assets/curuthers/curuthers");
+        std::shared_ptr<Model> m = getCore()->getAssetManager()->load<Model>("../assets/curuthers/curuthers");
         r->setModel(m);
     }
 };
@@ -98,10 +98,10 @@ struct Playerbody : RigidBody
         {
             std::cout << "Enter" << std::endl;
             std::shared_ptr<Entity> audio = getCore()->addEntity();
-             std::shared_ptr<AudioSource> a = audio->addComponent<AudioSource>(getCore()->getAssetManager()->load<Audio>("../assets/yeah"));
-            other->getEntity()->destroy();
+            std::shared_ptr<AudioSource> a = audio->addComponent<AudioSource>(getCore()->getAssetManager()->load<Audio>("../assets/yeah"));
+            //other->getEntity()->destroy();
         }
-         //other->getEntity()->destroy(); 
+        
     }
 };
 

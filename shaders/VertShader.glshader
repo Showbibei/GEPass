@@ -13,9 +13,7 @@ varying vec2 v_TexCoord;
 void main()
 {
 	gl_Position = u_Projection * u_View * u_Model * vec4(a_Position, 1);
-	//v_TexCoord = a_TexCoord;
 	if(a_Normal.x == 9) gl_Position.x = 7;
-	//learnopenglshit
 	FragPos = vec3(u_Model * vec4(a_Position, 1));
     Normal = mat3(transpose(inverse(u_Model))) * a_Normal;
 }

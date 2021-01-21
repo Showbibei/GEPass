@@ -35,7 +35,7 @@ namespace myengine
 		std::shared_ptr<Model> model;
 
 		rend::vec3 lightPosition;
-		bool lightForward = false;
+	
 
 	};
 
@@ -68,9 +68,6 @@ namespace myengine
 			quadratic = 0.0075f;
 
 			position = rend::vec3(0, 0, -5);
-
-			//linear = 0.0014f;
-			//quadratic = 0.000007f;
 		}
 
 		void SetPosition(rend::vec3 _position)

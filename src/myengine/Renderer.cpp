@@ -19,8 +19,7 @@ namespace myengine
 		shader = getCore()->context->createShader();
 		shader->parse("../shaders/VertShader.glshader", "../shaders/FragShader.glshader");
 
-		lightPosition = rend::vec3(0, 3, -5);
-		lightForward = true;
+		lightPosition = rend::vec3(0, 0, 0);
 
 		ShaderMaterial defaultMat;
 		material = defaultMat;
@@ -29,34 +28,12 @@ namespace myengine
 	void Renderer::onInitialize(ShaderMaterial _material)
 	{
 		onInitialize();
-
 		material = _material;
 	}
 
 void Renderer::onTick()
 {
-	if (lightForward)
-	{
-		if (lightPosition.z > -8)
-		{
-			lightPosition.z -= 0.01;
-		}
-		else
-		{
-			lightForward = false;
-		}
-	}
-	else
-	{
-		if (lightPosition.z < -5)
-		{
-			lightPosition.z += 0.01;
-		}
-		else
-		{
-			lightForward = true;
-		}
-	}
+
 }
 
 void Renderer::onRender()

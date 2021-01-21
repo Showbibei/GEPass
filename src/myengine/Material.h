@@ -13,10 +13,10 @@ namespace myengine
 
 		ShaderMaterial()
 		{
-			albedo = rend::vec3(1, 0, 1);
-			metallic = 0;
-			roughness = 0.3;
-			ao = 0;
+			albedo = rend::vec3(0.3, 0, 0.6);
+			metallic = 1;
+			roughness = 0.1;
+			ao = 1;
 		}
 
 		void SetMaterial(rend::vec3 _albedo)

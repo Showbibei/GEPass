@@ -90,8 +90,7 @@ add_library(myengine
   src/myengine/BoxCollider.h
   src/myengine/RigidBody.h
 
-  src/myengine/FragShader.txt
-  src/myengine/VertShader.txt
+
 )
 
 

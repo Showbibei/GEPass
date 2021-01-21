@@ -8,12 +8,6 @@ in vec3 FragPos;
 in vec3 Normal;
 
 struct Material {
-	//vec3 ambient;
-	//vec3 diffuse;
-	//vec3 specular;
-	
-	//float shininess;
-	
 	vec3 albedo;
 	float metallic;
 	float roughness;
@@ -50,17 +44,17 @@ vec3 fresnelSchlick(float cosTheta, vec3 F0);
 
 void main()
 {
-	// pbr housekeeping
+
 	vec3 N = normalize(Normal);
 	vec3 V = normalize(viewPos - FragPos);
 	
 	vec3 F0 = vec3(0.04);
 	F0 = mix(F0, material.albedo, material.metallic);
 	
-	// reflectance equation
+
     vec3 Lo = vec3(0.0);
 	
-	//per light
+
 	vec3 L = normalize(pointLight.position - FragPos);
 	vec3 H = normalize(V + L);
 	float distance = length(pointLight.position - FragPos);
@@ -68,7 +62,7 @@ void main()
 	float attenuation = 1.0 / (pointLight.constant + pointLight.linear * distance + pointLight.quadratic * (distance * distance));
 	vec3 radiance = pointLight.color * attenuation;
 	
-	// cook-torrance brdf
+
 	float NDF = DistributionGGX(N, H, material.roughness);
 	float G = GeometrySmith(N, V, L, material.roughness);
 	vec3 F = fresnelSchlick(max(dot(H, V), 0.0), F0);
@@ -81,7 +75,7 @@ void main()
 	float denominator = 4.0 * max(dot(N, V), 0.0) * max(dot(N, L), 0.0);
 	vec3 specular = numerator / max(denominator, 0.001);
 
-	// add to outgoing radiance Lo
+
 	float NdotL = max(dot(N, L), 0.0);
 	Lo += (kD * material.albedo / PI + specular) * radiance * NdotL; 
 	// end of per light
@@ -92,7 +86,7 @@ void main()
 	color = color / (color + vec3(1.0));
 	color = pow(color, vec3(1.0/2.2));
 	
-	// end of pbr shitty shit
+
 	
 	FragColor = vec4(color, 1.0);
 }

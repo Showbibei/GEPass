@@ -10,7 +10,6 @@ namespace myengine
 	void Audio::onLoad()
 	{
 		alGenBuffers(1, &id);
-		std::cout << "my id is" + id << std::endl;
 		ALenum format = 0;
 		ALsizei freq = 0;
 		std::vector<char> bufferData;
