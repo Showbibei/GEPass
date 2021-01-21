@@ -96,24 +96,6 @@ namespace myengine
 			}
 		}
 
-		//std::vector<std::shared_ptr<RigidBody>> finalCollisions = std::vector<std::shared_ptr<RigidBody>>();
-		//std::vector<std::shared_ptr<RigidBody>>::iterator it = collisions.begin();
-
-		//for (int i = 0; i < collisions.size(); i++)
-		//{
-		//	if (std::find(newCollisions.begin(), newCollisions.end(), collisions[i]) != newCollisions.end())
-		//	{
-		//		finalCollisions.push_back(collisions[i]);
-		//	}
-		//	else
-		//	{
-		//		// onCollisionLeave
-		//		onCollisionLeave(newCollisions[i]);
-		//	}
-		//}
-
-		//collisions = finalCollisions;
-
 		return collision;
 	}
 

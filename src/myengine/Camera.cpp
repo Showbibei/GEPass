@@ -11,17 +11,15 @@ void Camera::onInitialize()
 	std::shared_ptr<Camera> self = getEntity()->getComponent<Camera>();
 	getCore()->cameras.push_back(self);
 
-	//
 	fovy = 90;
 	aspect = 1;
 	near = 0.1;
 	far = 100;
 	persp = rend::perspective(rend::radians(fovy), aspect, near, far);
-
 	pitch = 0;
 	yaw = 0;
 	getTransform()->rotation.x = -90;
-	//
+
 }
 
 void Camera::onTick()
@@ -41,12 +39,8 @@ void Camera::onTick()
 
 rend::mat4 Camera::getViewMat()
 {
-	//return rend::inverse(getTransform()->getModel());
-
 	rend::vec3 position = getTransform()->position;
-
 	return rend::lookAt(position, position + rend::normalize(direction), rend::vec3(0, 1, 0));
-	//return rend::inverse(getTransform()->getModel());
 }
 
 std::shared_ptr<rend::RenderTexture> Camera::getRenderTexture()

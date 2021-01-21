@@ -1,3 +1,5 @@
+#ifndef MYENGINE_TRANSFORM_H
+#define MYENGINE_TRANSFORM_H
 #include "Component.h"
 
 #include <rend/rend.h>
@@ -12,7 +14,6 @@ struct Transform : public Component
   rend::mat4 getModel();
   void setPosition(rend::vec3 position);
   void setScale(rend::vec3 scale);
-  //void translate(rend::vec3 translation);
   void translate(float x, float y, float z);
   void rotate(float x, float y, float z);
 
@@ -24,3 +25,4 @@ struct Transform : public Component
 
 }
 
+#endif

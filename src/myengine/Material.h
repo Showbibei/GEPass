@@ -1,3 +1,5 @@
+#ifndef MYENGINE_MATERIAL_H
+#define MYENGINE_MATERIAL_H
 #include <rend/rend.h>
 
 
@@ -35,3 +37,5 @@ namespace myengine
 
 
 }
+
+#endif

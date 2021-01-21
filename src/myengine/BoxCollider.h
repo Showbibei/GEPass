@@ -5,7 +5,6 @@
 
 namespace myengine
 {
-
 	struct BoxCollider
 	{
 		rend::vec3 size;

@@ -15,7 +15,6 @@ struct RigidBody : public Component
 	void onInitialize();
 	bool CheckCollision(rend::vec3 position);
 	void MovePosition(rend::vec3 position);
-	int getID();
 	std::shared_ptr<BoxCollider> collider;
 
 	int id;

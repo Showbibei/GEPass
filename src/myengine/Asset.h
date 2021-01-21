@@ -14,7 +14,6 @@ namespace myengine
 	{
 		virtual ~Asset();
 		virtual void onLoad(const std::string& path);
-		//virtual void onCreate();
 
 		std::string getPath();
 		std::shared_ptr<Core> getCore();

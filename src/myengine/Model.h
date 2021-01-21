@@ -1,3 +1,5 @@
+#ifndef MYENGINE_MODEL_H
+#define MYENGINE_MODEL_H
 #include "Asset.h"
 #include "Exception.h"
 
@@ -8,15 +10,6 @@
 
 namespace myengine
 {
-
-/*
-struct MaterialGroup
-{
-  std::shared_ptr<rend::Mesh> mesh;
-  std::shared_ptr<Texture> texture;
-};
-*/
-
 struct Renderer;
 
 struct Model : public Asset
@@ -28,8 +21,7 @@ private:
 
   std::shared_ptr<rend::Mesh> mesh;
 
-  //std::vector<MaterialGroup> groups;
 };
 
 }
-
+#endif

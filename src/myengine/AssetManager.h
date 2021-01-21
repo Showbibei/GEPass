@@ -1,3 +1,5 @@
+#ifndef MYENGINE_ASSETMANAGER_H
+#define MYENGINE_ASSETMANAGER_H
 #include "Asset.h"
 
 #include <vector>
@@ -45,3 +47,4 @@ namespace myengine
 
 }
 
+#endif

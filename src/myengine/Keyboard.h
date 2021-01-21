@@ -1,3 +1,5 @@
+#ifndef MYENGINE_KEYBOARD_H
+#define MYENGINE_KEYBOARD_H
 #include <vector>
 
 #ifdef USE_SDL
@@ -27,3 +29,5 @@ private:
 };
 
 }
+
+#endif

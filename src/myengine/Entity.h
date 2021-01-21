@@ -1,3 +1,5 @@
+#ifndef MYENGINE_ENTITY_H
+#define MYENGINE_ENTITY_H
 #include "Exception.h"
 
 #include <vector>
@@ -76,3 +78,5 @@ private:
 };
 
 }
+
+#endif
