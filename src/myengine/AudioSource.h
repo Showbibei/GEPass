@@ -4,15 +4,11 @@
 #include <AL/alc.h>
 #include "Component.h"
 
-
-
-
 namespace myengine
 {
 	struct Audio;
 	struct AudioSource : public Component
 	{
-
 		void onInitialize(std::shared_ptr<Audio> audio);
 		void onTick();
 		void onDestroy();

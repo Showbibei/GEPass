@@ -15,7 +15,7 @@ void Camera::onInitialize()
 	aspect = 1;
 	near = 0.1;
 	far = 100;
-	persp = rend::perspective(rend::radians(fovy), aspect, near, far);
+	persp = rend::perspective(rend::radians(fovy), aspect, near, far); //Used in setting uniforms in the renderer
 	pitch = 0;
 	yaw = 0;
 	getTransform()->rotation.x = -90;

@@ -8,9 +8,7 @@
 
 namespace myengine
 {
-
     struct Core;
-
     struct AssetManager
     {
         template <typename T>
@@ -41,7 +39,7 @@ namespace myengine
     private:
         friend struct myengine::Core;
 
-        std::vector<std::shared_ptr<Asset> > assets;
+        std::vector<std::shared_ptr<Asset>> assets;
         std::weak_ptr<Core> core;
     };
 

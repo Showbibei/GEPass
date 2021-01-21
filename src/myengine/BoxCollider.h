@@ -12,7 +12,7 @@ namespace myengine
 
 		BoxCollider()
 		{
-			size = rend::vec3(1, 1, 1);
+			size = rend::vec3(1, 1, 1); //Will always initialize BoxCollider size to a 1x1x1 cube
 			center = rend::vec3(0);
 		}
 	};

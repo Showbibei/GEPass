@@ -6,7 +6,7 @@
 
 namespace myengine
 {
-
+	//Assets onLoad function - call it by adding an audiosource component then getCore()->getAssetManager()->load<Audio>(path)
 	void Audio::onLoad()
 	{
 		alGenBuffers(1, &id);
@@ -18,7 +18,8 @@ namespace myengine
 		bufferData.resize(bufferData.size() - bufferData.size() % 4);
 	
 	}
-
+	
+	//loadOgg handles loading Ogg files. This is used in the audio assets onLoad function and won't have to be called otherwise
 	void Audio::loadOgg(const std::string& fileName, std::vector<char>& buffer, ALenum& format, ALsizei& freq)
 	{
 		int channels = 0;
